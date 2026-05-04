@@ -1,6 +1,8 @@
 # NeXt2Former-CD
 This repository contains the code for ["NeXt2Former-CD: Efficient Remote Sensing Change Detection with Modern Vision Architectures"](https://arxiv.org/abs/2602.18717).
 
+Our paper has been accepted to the IEEE International Conference on Image Processing (ICIP) 2026.
+
 ## Abstract
 State Space Models (SSMs) have recently gained traction in remote sensing change detection (CD) for their favorable scaling properties. In this paper, we explore the potential of modern convolutional and attention-based architectures as a competitive alternative. We propose NeXt2Former-CD, an end-to-end framework that integrates a Siamese ConvNeXt encoder initialized with DINOv3 weights, a deformable attention-based temporal fusion module, and a Mask2Former decoder. This design is intended to better tolerate residual co-registration noise and small object-level spatial shifts, as well as semantic ambiguity in bi-temporal imagery. Experiments on LEVIR-CD, WHU-CD, and CDD datasets show that our method achieves the best results among the evaluated methods, improving over recent Mamba-based baselines in both F1 score and IoU. Furthermore, despite a larger parameter count, our model maintains inference latency comparable to SSM-based approaches, suggesting it is practical for high-resolution change detection tasks.
 
@@ -80,6 +82,9 @@ You can find our pretrained NeXt2Former-CD model checkpoints [here](https://driv
     - [CDD](https://www.dropbox.com/s/ls9fq5u61k8wxwk/CDD.zip?dl=0)
 
     The preprocessed links above are from [DDPM-CD](https://github.com/wgcban/ddpm-cd).
+
+    Note: the DDPM-CD-provided CDD dataset is missing the validation sample
+    `val_02998`, so we ignore this sample in the CDD validation split.
 
     We also provide the processed dataset splits used in this project here:
     [NeXt2Former-CD datasets](https://drive.google.com/file/d/1JbP29TwhnNhvfQXil0ZvUB65UCSgTNWP/view?usp=sharing)
@@ -208,6 +213,11 @@ Our code is adapted from [M-CD](https://github.com/JayParanjape/M-CD/), which in
 This material is based upon work supported by the National Science Foundation under NSF EIR Grant No. 2401835, entitled "Mapping of Natural Disasters by Deep Subspace Learning in Multi-band and Multi-spectral Satellite Images."
 
 ## Citation
-```
-To be added
+```bibtex
+@article{wang2026next2former,
+  title={NeXt2Former-CD: Efficient Remote Sensing Change Detection with Modern Vision Architectures},
+  author={Wang, Yufan and Makrogiannis, Sokratis and Kambhamettu, Chandra},
+  journal={arXiv preprint arXiv:2602.18717},
+  year={2026}
+}
 ```
